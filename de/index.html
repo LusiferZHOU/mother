@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<script language="javascript" type="text/javascript">
+  function next(type){
+    if(type ==1){
+      document.getElementById('No1').className = "none";
+      document.getElementById('No2').className = "block";
+    }
+    
+    if(type ==2){
+      document.getElementById('No1').className = "none";
+      document.getElementById('No2').className = "none";
+      document.getElementById('No3').className = "block";
+    }
+    if(type ==3){
+      document.getElementById('No1').className = "block";
+      document.getElementById('No2').className = "none";
+      document.getElementById('No3').className = "none";
+    }
+  }
+</script>
+<body id="grad">
+  <div id="No1">
+    <p>母亲节快乐！</p>
+    <div>
+        <img src="./img/bx1.png" class="bx1" />
+    </div>
+    <div class="next1">
+      <button onclick="next(1)">下一步>></button>
+    </div>
+  </div>
+  <div id="No2" class="none">
+    <p>送给我最爱的妈妈</p>
+      <div class="wrap">
+          <!--包裹所有元素的容器-->
+          <div class="cube">
+              <!--前面图片 -->
+              <div class="out_front">
+                  <img src="./img/1.jpg" class="pic" />
+              </div>
+              <!--后面图片 -->
+              <div class="out_back">
+                  <img src="./img/2.jpg" class="pic" />
+              </div>
+              <!--左面图片 -->
+              <div class="out_left">
+                  <img src="./img/3.jpg" class="pic" />
+              </div>
+              <!--右面图片 -->
+              <div class="out_right">
+                  <img src="./img/4.jpg" class="pic" />
+              </div>
+              <!--上面图片 -->
+              <div class="out_top">
+                  <img src="./img/5.jpg" class="pic" />
+              </div>
+              <!--下面图片 -->
+              <div class="out_bottom">
+                  <img src="./img/7.jpg" class="pic" />
+              </div>
+  
+              <!--小正方体 -->
+              <span class="in_front">
+                  <img src="./img/7.jpg" class="in_pic" />
+              </span>
+              <span class="in_back">
+                   <img src="./img/6.jpg" class="in_pic" />
+              </span>
+              <span class="in_left">
+                  <img src="./img/5.jpg" class="in_pic" />
+              </span>
+              <span class="in_right">
+                  <img src="./img/4.jpg" class="in_pic" />
+              </span>
+              <span class="in_top">
+                  <img src="./img/3.jpg" class="in_pic" />
+              </span>
+              <span class="in_bottom">
+                  <img src="./img/2.jpg" class="in_pic" />
+              </span>
+          </div>
+          
+      </div>
+      <div class="next2">
+          <button onclick="next(2)">下一步>></button>
+        </div>
+  </div>
+  <div id="No3" class="none">
+      <p>END....</p>
+      <div class="bx">
+          <img src="./img/bx.png" class="bx"/>
+      </div>
+      <div class="next3">
+          <button onclick="next(3)">返回>></button>
+        </div>
+    </div>
+</body>
+<style>
+  *{
+  }
+  html,body{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+  }
+#grad {
+  background: -webkit-linear-gradient(rgb(255, 0, 0), rgb(0, 140, 255)); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(red, rgb(0, 140, 255)); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(red, rgb(0, 140, 255)); /* Firefox 3.6 - 15 */
+  background: linear-gradient(red, rgb(0, 140, 255)); /* 标准的语法 */
+}
+/* #grad{
+  background-color: #ff86b2;
+} */
+.none{
+  display: none;
+}
+.block{
+  display: block;
+}
+#No1,#No3{
+  text-align: center;
+}
+#No1 p{
+  color: white;
+  font-size: 40px;
+  font-weight: bolder;
+}
+
+#No1 .next1 button,#No2 .next2 button,#No3 .next3 button{
+  background: white;
+  text-align: center;
+  width: 100px;
+  height: 50px;
+  line-height: 50px;
+  border-radius:10px;
+  font-size: 20px;
+  border: none;
+}
+#No1 .next1 button:focus,#No2 .next2 button:focus,#No3 .next3 button:focus{
+  outline: none;
+}
+#No1 .next1 button:hover,#No2 .next2 button:hover,#No3 .next3 button:hover{
+  background-color: rgb(224, 224, 224);
+}
+#No1,#No2,#No3{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+#No2 p{
+  color: white;
+  font-size: 25px;
+  font-weight: bolder;
+  position: absolute;
+  top: 50px;
+  left: 30px;
+}
+#No1 .next1,#No2 .next2,#No3 .next3{
+  position: fixed;
+  bottom: 10%;
+  width: 100%;
+}
+#No2 .next2{
+  left: 36.5%;
+}
+#No3 p{
+  color: white;
+  font-size: 25px;
+  font-weight: bolder;
+}
+#No3 .bx{
+  border: 1px solid red;
+  width: 100%;
+  height: 80%;
+  position:fixed;
+  top: 40px;
+  left: 0;
+}
+#No1 .bx1{
+  width: 100%;
+  height: 100%;
+}
+
+/*最外层容器样式*/
+.wrap {
+            width: 160px;
+            height: 160px;
+            margin: 180px 0 0 25%;
+            position: relative;
+        }
+
+        /*包裹所有容器样式*/
+        .cube {
+            width: 160px;
+            height: 160px;
+            margin: 0 auto;
+            transform-style: preserve-3d;
+            transform: rotateX(-30deg) rotateY(-80deg);
+            animation: rotate linear 20s infinite;
+        }
+
+        @-webkit-keyframes rotate {
+            from {
+                transform: rotateX(0deg) rotateY(0deg);
+            }
+            to {
+                transform: rotateX(360deg) rotateY(360deg);
+            }
+        }
+
+        .cube div {
+            position: absolute;
+            width: 160px;
+            height: 160px;
+            opacity: 0.8;
+            transition: all .4s;
+        }
+
+        /*定义所有图片样式*/
+        .pic {
+            width: 160px;
+            height: 160px;
+        }
+
+        .cube .out_front {
+            transform: rotateY(0deg) translateZ(80px);
+        }
+
+        .cube .out_back {
+            transform: translateZ(-80px) rotateY(180deg);
+        }
+
+        .cube .out_left {
+            transform: rotateY(-90deg) translateZ(80px);
+        }
+
+        .cube .out_right {
+            transform: rotateY(90deg) translateZ(80px);
+        }
+
+        .cube .out_top {
+            transform: rotateX(90deg) translateZ(80px);
+        }
+
+        .cube .out_bottom {
+            transform: rotateX(-90deg) translateZ(80px);
+        }
+
+        /*定义小正方体样式*/
+        .cube span {
+            display: block;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+
+        .cube .in_pic {
+            width: 100px;
+            height: 100px;
+        }
+
+        .cube .in_front {
+            transform: rotateY(0deg) translateZ(50px);
+        }
+
+        .cube .in_back {
+            transform: translateZ(-50px) rotateY(180deg);
+        }
+
+        .cube .in_left {
+            transform: rotateY(-90deg) translateZ(50px);
+        }
+
+        .cube .in_right {
+            transform: rotateY(90deg) translateZ(50px);
+        }
+
+        .cube .in_top {
+            transform: rotateX(90deg) translateZ(50px);
+        }
+
+        .cube .in_bottom {
+            transform: rotateX(-90deg) translateZ(50px);
+        }
+
+        /*鼠标移入后样式*/
+        .cube:hover .out_front {
+            transform: rotateY(0deg) translateZ(200px);
+        }
+
+        .cube:hover .out_back {
+            transform: translateZ(-200px) rotateY(180deg);
+        }
+
+        .cube:hover .out_left {
+            transform: rotateY(-90deg) translateZ(200px);
+        }
+
+        .cube:hover .out_right {
+            transform: rotateY(90deg) translateZ(200px);
+        }
+
+        .cube:hover .out_top {
+            transform: rotateX(90deg) translateZ(200px);
+        }
+
+        .cube:hover .out_bottom {
+            transform: rotateX(-90deg) translateZ(200px);
+        }
+</style>
+</html>
